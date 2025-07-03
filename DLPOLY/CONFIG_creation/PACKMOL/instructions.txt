@@ -1,0 +1,22 @@
+1. Make pdbs for each molecule type using cfg2pdb.f90 script
+
+2. Use residualadder script to add some number to the pdbs that is needed
+
+3. Set up input file. Make it so that the adsorbed molecule doesn't spawn close
+   to the edge; ie set up .inp file like: 
+   '1. 1. 1. 49. 49. 49.' for the adsorbed molecule in an example box that is 50x50x50
+   (this notation means molecules will be put between 1 and 49 for each axis)
+   In the place of 50x50x50, use your zeolite length parameters from the config.
+
+4. ./packmol < inputfile.inp
+
+5. Convert the final pdb 'mixture.pdb' to config using pdb2config.cpp script, instructions
+   for running at the top of that script
+   
+6. Open in aten.
+
+7. Click 'cell' tab, press 'periodic'. Press 'lengths' and set the unit cell 
+   lengths to the same numbers from your input.inp file for the zeolite.
+   
+8. Rebond, check no funny business. Save, to implement your new periodic
+   boundary conditions 

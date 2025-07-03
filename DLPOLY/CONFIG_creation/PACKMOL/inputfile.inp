@@ -1,0 +1,18 @@
+#
+# A mixture of 4183 molecule1s and 7 molecule2s#
+#
+
+tolerance 2.0 #number of Angstroms apart theyll be at least#
+filetype pdb
+output mixture.pdb
+
+structure FIRST_MOLECULE_FILE.pdb 
+  number 4183 
+  inside box 0. 0. 0. 50. 50. 50. #box size# 
+end structure
+
+structure SECOND_MOLECULE_FILE.pdb
+  number 7
+  inside box 0. 0. 0. 50. 50. 50. 
+end structure
+
