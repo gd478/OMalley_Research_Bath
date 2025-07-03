@@ -1,1 +1,5 @@
 Scripts for computing rotational behaviour from DLPOLY MD trajectories (HISTORY format)
+
+Use MDANSE script to generate ACFs
+Then average with averager script
+Then use workup to fit exponential to data
