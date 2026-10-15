@@ -32,18 +32,18 @@ chunked_steps = pattern_2.findall(rows) # this uses pattern to identify the step
 
 
 
-#INSERT USER DEFINED FUNCTIONS BELOW
+#####INSERT USER DEFINED FUNCTIONS BELOW######
 
 # #Producing a list of lists with each term separated into string
 def str_splitter(chunked_list):  
 
-"""
-This is a function designed to take our regex processed lists 
-and break them down into individual values. 
-
-index:
-chunked_list = the list of regex processed values
-""" 
+ """
+ This is a function designed to take our regex processed lists 
+ and break them down into individual values. 
+    
+ index:
+ chunked_list = the list of regex processed values
+ """ 
  unchunked_list = [] 
     
  for row in chunked_list:
@@ -102,35 +102,39 @@ def lazy_plot(df,name):
 
 
 
-#Proccessing using defined functions
-    
+######Proccessing using defined functions#######
+
 unchunked_values = str_splitter(chunked_values) # spliting "value blocks into single vals"
 
-unchunked_steps = str_splitter(chunked_steps) "splitting step-time-numberof values into individ values  "
+unchunked_steps = str_splitter(chunked_steps) # "splitting step-time-number of values into individ values  "
 
 
 
 
 
-#INSERT SYSTEM RELEVANT VALUES BELOW 
+#####INSERT SYSTEM RELEVANT VALUES BELOW#####
 
 """
 TO ADD TO THIS SECTION - 
 
-1) go to dl poly manual
+1) go to dl poly manual 
+    output files>statis
 
 2) find the index of the value that you want
 
 then:
+    
+#LABEL FOR INFORMATION
 
-name of variable  = value_steps_dataframe([INSERT INDEX OF VARIABLE HERE])
+name_of_variable  = value_steps_dataframe([INSERT INDEX OF VARIABLE HERE])
 
-lazy_plot(name of variable, "title for the outputted plot")
+lazy_plot(name_of_variable, "title for the outputted plot")
 
 
 """
 
 
+#Plot of E for equilibration
 
 system_E = value_steps_dataframe(0)
 
@@ -145,7 +149,9 @@ lazy_plot(system_T,"system temp")
 
 #This section is for things relevant to a NPT simulation
 if int(unchunked_steps[0][0]) > 38:
+    
     unit_cell_change = value_steps_dataframe(40)
+ 
     lazy_plot(unit_cell_change,"unit cell variation")
 
 
